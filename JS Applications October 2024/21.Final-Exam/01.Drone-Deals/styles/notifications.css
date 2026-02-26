@@ -4,7 +4,6 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-   
 }
 
 
@@ -13,7 +12,6 @@
     color: #000000;
     display: none;
     text-align: right;
-   
 }
 
 .notification>span {
