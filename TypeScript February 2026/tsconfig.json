@@ -4,6 +4,9 @@
     "module": "esnext",
     "sourceMap": true,
     "strict": true,
-    "outDir": "out"
-  }
+    "outDir": "out",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+  },
+  "include": ["**/*.ts"]
 }
