@@ -1,3 +1,4 @@
+import { ConvertToEuro } from "./decorators";
 import { MenuItem, MenuItemType, WithId } from "./models";
 
 export abstract class BaseMenuItem implements MenuItem {
@@ -20,7 +21,7 @@ export abstract class BaseMenuItem implements MenuItem {
         return this._basePrice;
     }
 
-    // @ConvertToEuro 
+    @ConvertToEuro
     get finalPrice(): number | undefined {
         return this._basePrice;
     }
