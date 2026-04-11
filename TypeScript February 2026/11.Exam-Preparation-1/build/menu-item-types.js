@@ -51,13 +51,6 @@ class Dessert extends BaseMenuItem {
     }
 }
 exports.Dessert = Dessert;
-// Generic Function: findItemById<T>
-// Implement a reusable generic function to locate an item in a collection.
-// •	Constraint: The generic type T must extend the WithId interface (from models.ts) to ensure the object has an id.
-// •	Arguments:
-// o	items: An array of items of type T
-// o	id: The numeric ID to search for
-// •	Returns: The first item found with the matching ID, or undefined.
 function findItemById(items, id) {
     const item = items.find((item) => item.id === id);
     return item;
