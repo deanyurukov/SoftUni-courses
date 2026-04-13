@@ -1,4 +1,5 @@
 import { DetailedContent, findItemById } from './content-types';
+import { NotifyOnSuccess } from './decorators';
 import { Viewer } from './models';
 
 export class ContentManager {
@@ -11,12 +12,12 @@ export class ContentManager {
         return `Content "${item.title}" (ID: ${item.id}) has been added.`;
     }
 
-    // @NotifyOnSuccess
+    @NotifyOnSuccess("Email")
     public markAsWatched(contentId: number, viewer: Viewer): string {
         const viewersToModify = this.viewers.get(contentId);
         
         if (!viewersToModify) {
-            return `Error: Content with ID ${contentId} not found.`;
+            return `ERROR: Content with ID ${contentId} not found.`;
         }
 
         viewersToModify.push(viewer);
@@ -38,6 +39,3 @@ export class ContentManager {
         return findItemById(this.contentItems, contentId);
     }
 }
-
-// •	findContent(contentId: number):
-// o	Uses the generic search function to locate content by ID.
