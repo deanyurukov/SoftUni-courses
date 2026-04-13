@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Series = exports.Movie = void 0;
+exports.Series = exports.Movie = exports.DetailedContent = void 0;
 exports.findItemById = findItemById;
 const models_1 = require("./models");
 class DetailedContent {
@@ -18,6 +18,7 @@ class DetailedContent {
         return this._type;
     }
 }
+exports.DetailedContent = DetailedContent;
 class Movie extends DetailedContent {
     director;
     constructor(id, title, releaseDate, director) {
@@ -25,7 +26,7 @@ class Movie extends DetailedContent {
         this.director = director;
     }
     getDetails() {
-        return `[${models_1.ContentType[this.type]}] "${this.title}" directed by ${this.director} (Released: ${this.releaseDate.toLocaleDateString()})`;
+        return `[${models_1.ContentType[this.type].toUpperCase()}] "${this.title}" directed by ${this.director} (Released: ${this.releaseDate.toLocaleDateString()})`;
     }
 }
 exports.Movie = Movie;
@@ -36,7 +37,7 @@ class Series extends DetailedContent {
         this.platformUrl = platformUrl;
     }
     getDetails() {
-        return `[${models_1.ContentType[this.type]}] "${this.title}" (Released: ${this.releaseDate.toLocaleDateString()}), available at: ${this.platformUrl}`;
+        return `[${models_1.ContentType[this.type].toUpperCase()}] "${this.title}" (Released: ${this.releaseDate.toLocaleDateString()}), available at: ${this.platformUrl}`;
     }
 }
 exports.Series = Series;

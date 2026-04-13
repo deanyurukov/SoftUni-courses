@@ -1,6 +1,6 @@
 import { BaseContent, ContentType, idOnly } from "./models";
 
-abstract class DetailedContent implements BaseContent {
+export abstract class DetailedContent implements BaseContent {
     public readonly id: number;
     public readonly title: string;
     public readonly releaseDate: Date;
@@ -29,7 +29,7 @@ export class Movie extends DetailedContent {
     }
 
     getDetails(): string {
-        return `[${ContentType[this.type]}] "${this.title}" directed by ${this.director} (Released: ${this.releaseDate.toLocaleDateString()})`;
+        return `[${ContentType[this.type].toUpperCase()}] "${this.title}" directed by ${this.director} (Released: ${this.releaseDate.toLocaleDateString()})`;
     }
 }
 
@@ -42,7 +42,7 @@ export class Series extends DetailedContent {
     }
 
     getDetails(): string {
-        return `[${ContentType[this.type]}] "${this.title}" (Released: ${this.releaseDate.toLocaleDateString()}), available at: ${this.platformUrl}`;
+        return `[${ContentType[this.type].toUpperCase()}] "${this.title}" (Released: ${this.releaseDate.toLocaleDateString()}), available at: ${this.platformUrl}`;
     }
 }
 
