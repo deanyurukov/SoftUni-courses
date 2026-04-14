@@ -1,3 +1,4 @@
+import { ApplyInsurance } from "./decorators";
 import { Vehicle, VehicleCategory, WithId } from "./models";
 
 export abstract class BaseVehicle implements Vehicle {
@@ -19,7 +20,7 @@ export abstract class BaseVehicle implements Vehicle {
         return this._baseRentalPrice;
     }
 
-    // @ApplyInsurance 
+    @ApplyInsurance 
     get insuredRentalPrice(): number | undefined {
         return this._baseRentalPrice;
     }

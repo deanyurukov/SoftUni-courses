@@ -33,9 +33,9 @@ async function main() {
     }
 
     // --- Input 5: Check Decorated insuredRentalPrice ---
-    // console.log(`Truck base rental price: ${truck.baseRentalPrice?.toFixed(2)}€`);
-    // console.log(`Truck insured rental price: ${truck.insuredRentalPrice?.toFixed(2)}€`);
-    // console.log(`Sedan insured rental price (should be undefined): ${sedan.insuredRentalPrice}`);
+    console.log(`Truck base rental price: ${truck.baseRentalPrice?.toFixed(2)}€`);
+    console.log(`Truck insured rental price: ${truck.insuredRentalPrice?.toFixed(2)}€`);
+    console.log(`Sedan insured rental price (should be undefined): ${sedan.insuredRentalPrice}`);
 }
 
 main();
