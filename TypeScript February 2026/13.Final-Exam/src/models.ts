@@ -1,4 +1,4 @@
-enum VehicleCategory {
+export enum VehicleCategory {
     Sedan,
     SUV,
     Truck,
