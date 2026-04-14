@@ -1,7 +1,7 @@
 // index.ts 
-import { FleetManager } from './fleet-manager.js';
-import { Sedan, SUV, Truck } from './vehicle-types.js';
-import { Driver } from './models.js';
+import { FleetManager } from './fleet-manager';
+import { Sedan, SUV, Truck } from './vehicle-types';
+import { Driver } from './models';
 
 async function main() {
     // --- Input 1: Add Vehicles ---
@@ -15,22 +15,22 @@ async function main() {
     console.log(fleetManager.addVehicle(truck));
 
     // --- Input 2: Assign Drivers ---
-    // const driver1: Driver = { name: 'Alice', licenseNumber: 'DL-001' };
-    // const driver2: Driver = { name: 'Bob', licenseNumber: 'DL-002' };
-    // console.log(fleetManager.assignDriver(2, driver1));
-    // console.log(fleetManager.assignDriver(3, driver2));
-    // console.log(fleetManager.assignDriver(9, driver2));
+    const driver1: Driver = { name: 'Alice', licenseNumber: 'DL-001' };
+    const driver2: Driver = { name: 'Bob', licenseNumber: 'DL-002' };
+    console.log(fleetManager.assignDriver(2, driver1));
+    console.log(fleetManager.assignDriver(3, driver2));
+    console.log(fleetManager.assignDriver(9, driver2));
 
     // --- Input 3: List All Vehicles ---
-    // console.log(fleetManager.listAllVehicles().join('\n'));
+    console.log(fleetManager.listAllVehicles().join('\n'));
 
     // --- Input 4: Find Vehicle by ID ---
-    // const foundVehicle = fleetManager.findVehicle(2);
-    // if (foundVehicle) {
-    //     console.log(`Found vehicle: ${foundVehicle.model}, Maintenance: ${foundVehicle.getMaintenanceCost()}€`);
-    // } else {
-    //     console.log('Vehicle not found');
-    // }
+    const foundVehicle = fleetManager.findVehicle(2);
+    if (foundVehicle) {
+        console.log(`Found vehicle: ${foundVehicle.model}, Maintenance: ${foundVehicle.getMaintenanceCost()}€`);
+    } else {
+        console.log('Vehicle not found');
+    }
 
     // --- Input 5: Check Decorated insuredRentalPrice ---
     // console.log(`Truck base rental price: ${truck.baseRentalPrice?.toFixed(2)}€`);

@@ -1,6 +1,6 @@
 import { Vehicle, VehicleCategory, WithId } from "./models";
 
-abstract class BaseVehicle implements Vehicle {
+export abstract class BaseVehicle implements Vehicle {
     public id: number;
     public model: string;
     public engineCC: number;
