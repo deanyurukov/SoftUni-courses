@@ -9,7 +9,15 @@ export class GuildStash<T extends WithId> {
     }
 
     public take(id: number): T | undefined {
-        return this.records.find((obj: T) => obj.id === id);
+        const item: T | undefined = this.records.find((obj: T) => obj.id === id);
+
+        if (!item) {
+            return undefined;
+        }
+
+        this.records.splice(this.records.indexOf(item), 1);
+
+        return item;
     }
 
     public getAll(): T[] {
